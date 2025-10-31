@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movimiento en JSON</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+    <h1>Movimiento del cuerpo</h1>
+    <p>Json dice:</p>
+
+    <div>
+        <p id="mang"></p>
+    </div>
+
+    <script>
+        fetch('actividad2.json')
+            .then( response => response.json())
+            .then(json => {
+                document.getElementById("mang").innerHTML = json.acciones[1] +" " + json.partesDelCuerpo[0] + " " + json.lado[0];
+            })
+    </script>
+
+</body>
+</html>
