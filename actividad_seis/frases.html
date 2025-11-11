@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frases raras</title>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+</head>
+<body>
+
+    <h1> FRASES RARAS </h1>
+    <p id="fraseRara"></p>
+    <div id="imageContainer"></div>
+
+    <script>
+        const namuClient = supabase.createClient('https://ixbifcxvbqgovplihofq.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Iml4YmlmY3h2YnFnb3ZwbGlob2ZxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjE5MDIwMzMsImV4cCI6MjA3NzQ3ODAzM30.W-cu3dM_u36dGrdoY3OVIvgYgMkpIyunCY7yjOLjxGg', {
+            db: {schema:"public"}
+        });
+
+        (async () => {
+            const response = await namuClient.from("Trimestre 7").select("frase")
+            console.log(response.data[0].frase)
+            
+            document.getElementById("fraseRara").innerHTML = response.data[3].frase;
+
+             const response2 = await namuClient.storage.from("comida").getPublicUrl("patricio.png")
+            console.log(response2.data.publicUrl)
+
+            const imgElement= document.createElement('img')
+            imgElement.src= response2.data.publicUrl
+            imgElement.width= 400
+            document.getElementById('imageContainer').appendChild(imgElement)
+        })()
+    </script>
+</body>
+</html>

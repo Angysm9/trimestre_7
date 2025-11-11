@@ -1,0 +1,6 @@
+const namuClient = supabase.createClient('https://ixbifcxvbqgovplihofq.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Iml4YmlmY3h2YnFnb3ZwbGlob2ZxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjE5MDIwMzMsImV4cCI6MjA3NzQ3ODAzM30.W-cu3dM_u36dGrdoY3OVIvgYgMkpIyunCY7yjOLjxGg' )
+const namuClien = supabase.createClient('postgresql://postgres:[YOUR_PASSWORD]@db.ixbifcxvbqgovplihofq.supabase.co:5432/postgres', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Iml4YmlmY3h2YnFnb3ZwbGlob2ZxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjE5MDIwMzMsImV4cCI6MjA3NzQ3ODAzM30.W-cu3dM_u36dGrdoY3OVIvgYgMkpIyunCY7yjOLjxGg' )
+
+
+console.log(namuClient)
+console.log(namuClien)
