@@ -3,6 +3,7 @@ body{
     padding: 100px 100px 100px 100px;
     margin: auto;
     font-family: 'Gill Sans';
+    text-align: center;
 }
 
 @media screen and (max-Width:500px){
