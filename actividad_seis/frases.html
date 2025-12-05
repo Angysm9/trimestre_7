@@ -22,7 +22,7 @@
             const response = await namuClient.from("Trimestre 7").select("frase")
             console.log(response.data[0].frase)
             
-            document.getElementById("fraseRara").innerHTML = response.data[3].frase;
+            document.getElementById("fraseRara").innerHTML = response.data[2].frase;
 
              const response2 = await namuClient.storage.from("comida").getPublicUrl("patricio.png")
             console.log(response2.data.publicUrl)

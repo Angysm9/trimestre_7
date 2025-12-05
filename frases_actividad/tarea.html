@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POEMAS DE UN BOT</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+</head>
+<body>
+
+    <h1> Deseos de Media Noche</h1>
+    <p>Visita este <a href="https://bsky.app/profile/deseosdemedianoche.bsky.social">Bot</a> para más poemas.</p>
+            <div class="numerofrase">
+            <p id="numerofrase1"></p>
+            <p id="numerofrase2"></p>
+            <p id="numerofrase3"></p>
+            <p id="numerofrase4"></p>
+            <p id="numerofrase5"></p>
+            <p id="numerofrase6"></p>
+            <p id="numerofrase7"></p>
+            <p id="numerofrase8"></p>
+
+        </div>
+
+        <div class="fraseRara">
+            <p id="fraseRara1"></p>
+            <p id="fraseRara2"></p>
+            <p id="fraseRara3"></p>
+            <p id="fraseRara4"></p>
+            <p id="fraseRara5"></p>
+            <p id="fraseRara6"></p>
+            <p id="fraseRara7"></p>
+            <p id="fraseRara8"></p>
+        </div>
+
+        <script>
+        const namuClient = supabase.createClient('https://ixbifcxvbqgovplihofq.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Iml4YmlmY3h2YnFnb3ZwbGlob2ZxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjE5MDIwMzMsImV4cCI6MjA3NzQ3ODAzM30.W-cu3dM_u36dGrdoY3OVIvgYgMkpIyunCY7yjOLjxGg', {
+            db: {schema:"public"}
+        });
+
+        (async () => {
+            const response = await namuClient.from("Trimestre 7").select("numero")
+            console.log(response.data[0].color)
+            
+            document.getElementById("numerofrase1").innerHTML = response.data[0].numero;
+            document.getElementById("numerofrase2").innerHTML = response.data[2].numero;
+            document.getElementById("numerofrase3").innerHTML = response.data[2].numero;
+            document.getElementById("numerofrase4").innerHTML = response.data[3].numero;
+            document.getElementById("numerofrase5").innerHTML = response.data[4].numero;
+            document.getElementById("numerofrase6").innerHTML = response.data[5].numero;
+            document.getElementById("numerofrase7").innerHTML = response.data[6].numero;
+            document.getElementById("numerofrase8").innerHTML = response.data[7].numero;
+
+            const response2 = await namuClient.from("Trimestre 7").select("frase")
+            console.log(response2.data[0].frase)
+
+            document.getElementById("fraseRara1").innerHTML = response2.data[0].frase;
+            document.getElementById("fraseRara2").innerHTML = response2.data[1].frase;
+            document.getElementById("fraseRara3").innerHTML = response2.data[2].frase;
+            document.getElementById("fraseRara4").innerHTML = response2.data[3].frase;
+            document.getElementById("fraseRara5").innerHTML = response2.data[4].frase;
+            document.getElementById("fraseRara6").innerHTML = response2.data[5].frase;
+            document.getElementById("fraseRara7").innerHTML = response2.data[6].frase;
+            document.getElementById("fraseRara8").innerHTML = response2.data[7].frase;
+        })()
+    </script>
+</body>
+</html>
